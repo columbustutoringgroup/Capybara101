@@ -1,7 +1,7 @@
 Feature: Logout
   In order to secure my stuff
   As a user
-  I want to log out to hid my private page
+  I want to log out to hide my private page
 
   Background:
     Given the login page
