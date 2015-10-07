@@ -12,3 +12,4 @@ Feature: Login Page
     Given the login page
     When I log in with invalid credentials
     Then I should see the login page with an error message
+
