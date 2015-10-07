@@ -11,6 +11,7 @@ end
 Then(/^I should see the secret page$/) do
   url = URI.parse(current_url)
   expect(url.path).to eq('/dashboard')
+  expect(page.has_content?("Your username is Admin"))
 end
 
 
