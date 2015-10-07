@@ -7,4 +7,8 @@ Feature: Login Page
     Given the login page
     When I log in with proper credentials
     Then I should see the secret page
-    
+
+  Scenario: Invalid User
+    Given the login page
+    When I log in with invalid credentials
+    Then I should see the login page with an error message
