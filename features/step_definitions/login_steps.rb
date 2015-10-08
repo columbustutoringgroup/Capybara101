@@ -11,7 +11,7 @@ end
 Then(/^I should see the secret page$/) do
   url = URI.parse(current_url)
   expect(url.path).to eq('/dashboard')
-  expect(page.has_content?("Your username is Admin")).to be true
+  expect(page).to have_content("Your username is Admin")
 end
 
 
@@ -24,5 +24,5 @@ end
 Then(/^I should see the login page with an error message$/) do
   url = URI.parse(current_url)
   expect(url.path).to eq('/login')
-  expect(page.has_content?("Your username & password did not match")).to be true
+  expect(page).to have_content("Your username & password did not match")
 end

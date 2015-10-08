@@ -10,7 +10,7 @@ end
 Then(/^I should see the logout page$/) do
   url = URI.parse(current_url)
   expect(url.path).to eq('/logout')
-  expect(page.has_content?("You have been logged out")).to be true
+  expect(page).to have_content("You have been logged out")
 end
 
 When(/^I go to the private page$/) do
@@ -18,5 +18,5 @@ When(/^I go to the private page$/) do
 end
 
 Then(/^I should not see my private information$/) do
-  expect(page.has_content?("Your username is Admin")).to be false
+  expect(page).not_to have_content("Your username is Admin")
 end
