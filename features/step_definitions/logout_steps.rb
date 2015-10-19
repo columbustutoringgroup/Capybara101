@@ -1,8 +1,6 @@
 Given(/^the dashboard page$/) do
-  visit("/")
-  fill_in("username", :with => "User")
-  fill_in("password", :with => "User")
-  click_button("Login")
+  step "the login page"
+  step "I log in with proper credentials"
 end
 
 When(/^I click the Logout link$/) do
