@@ -21,9 +21,12 @@ Capybara helps us test web applications by simulating how a real user would inte
 
 ##Considerations
 - What needs to be tested to ensure that the user authentication functionality of this app works correctly?
+Username and password are equal (if you input the wrong password, you should not log in)
 - Besides the faulty password scheme, what's the other glaring authentication problem with this application?
-- Cucumber is not a big fan of duplicating `step_definitions`, do you think you might reuse some of the steps from `login_steps` for your new scenarios.
 
+if you visit localhost:4567/dashboard, it will show the secret site
+- Cucumber is not a big fan of duplicating `step_definitions`, do you think you might reuse some of the steps from `login_steps` for your new scenarios.
+Use steps %{} and call the steps that you want to call
 ##Resources
 - [Capybara Docs](https://github.com/jnicklas/capybara)
 - [Cucumber Documentation](http://cukes.info/)
