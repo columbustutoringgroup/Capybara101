@@ -2,14 +2,14 @@
 
 ##Work in Progress
 
-__Skill Level:__ Beginner  
-__Time Limit:__ 30 minutes  
+__Skill Level:__ Beginner
+__Time Limit:__ 30 minutes
 
 The aim of this challenge is to introduce you to acceptance testing. Your job will be to create automated tests using Capybara & Cucumber that mimic a user logging into the site and navigating to a special page.
 
 __NOTE:__ _To login, your username must be the same as your password._
 
-Capybara helps us test web applications by simulating how a real user would interact with an app. 
+Capybara helps us test web applications by simulating how a real user would interact with an app.
 
 ##Instructions
 - Clone the repo to your computer and bundle its gems
@@ -22,6 +22,8 @@ Capybara helps us test web applications by simulating how a real user would inte
 ##Considerations
 - What needs to be tested to ensure that the user authentication functionality of this app works correctly?
 - Besides the faulty password scheme, what's the other glaring authentication problem with this application?
+ * Login is not validated in any way: you can click login and enter the site without inputting a username or password
+ *
 - Cucumber is not a big fan of duplicating `step_definitions`, do you think you might reuse some of the steps from `login_steps` for your new scenarios.
 
 ##Resources
