@@ -1,9 +1,9 @@
 !!! 5
 %html
   %head
-    %title 
+    %title
       Capybara Site
-    %link{ href: 'css/style.css', rel: 'stylesheet'}
+    %link{ href: './public/css/style.css', rel: 'stylesheet'}
   %body
     .container
       %small= @message if @message
@@ -11,21 +11,21 @@
       %h1 Capybara Secret Site
       %nav
         %ul
-          %li 
-            %a{ href: '/' } 
+          %li
+            %a{ href: '/' }
               Home
           %li
-            %a{ href: '/' } 
+            %a{ href: '/' }
               Login
       %section
         %p This is login page for users.
-        %form{ action: '/login', method: 'POST' } 
-          %input{type: 'text', name: 'username', placeholder: 'Username here'}
+        %form{ action: '/login', method: 'POST' }
+          %input{id: 'username', type: 'text', name: 'username', placeholder: 'Username here'}
           %br
-          %input{type: 'text', name: 'password', placeholder: 'Password here'}
+          %input{id: 'password', type: 'text', name: 'password', placeholder: 'Password here'}
           %br
           %br
-          %input{type: 'submit', value: 'Login'}
+          %input{id: 'login', type: 'submit', value: 'Login'}
 
       %footer
         %i

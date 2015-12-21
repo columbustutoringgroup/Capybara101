@@ -32,6 +32,7 @@ class Capybara101 < Sinatra::Base
 
   get "/dashboard" do
     @username = session[:user]
-    haml :dashboard
+    return haml :dashboard if @username != nil
+    haml :forbidden
   end
 end
