@@ -5,10 +5,10 @@ Given(/^the secret page$/) do
 end
 
 When(/^I click logout$/) do
-  page.find_link('Logout').click
+  click_link 'Logout'
 end
 
 Then(/^I see I'm on the home page, in logged out mode$/) do
-  page.should have_content('You have been logged out')
-  page.should have_content('This is login page for users.')
+  expect(page).to have_content('You have been logged out')
+  expect(page).to have_content('This is login page for users.')
 end
