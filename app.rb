@@ -31,7 +31,12 @@ class Capybara101 < Sinatra::Base
   end
 
   get "/dashboard" do
-    @username = session[:user]
-    haml :dashboard
+    if logged_in?
+      @username = session[:user]
+      haml :dashboard
+    else
+      @message = 'Access Denied: Please login to view page'
+      haml :index
+    end
   end
 end
