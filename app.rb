@@ -31,7 +31,11 @@ class Capybara101 < Sinatra::Base
   end
 
   get "/dashboard" do
-    @username = session[:user]
-    haml :dashboard
+    if logged_in? then
+      @username = session[:user]
+      haml :dashboard
+    else
+      redirect to '/'
+    end
   end
 end
