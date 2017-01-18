@@ -9,5 +9,6 @@ When(/^I log in with proper credentials$/) do
 end
 
 Then(/^I should see the secret page$/) do
+  # How do I do this without hard-coding the path?
   expect(current_path).to eq '/dashboard'
 end
