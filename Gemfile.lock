@@ -21,6 +21,8 @@ GEM
     extlib (0.9.16)
     gherkin (2.12.2)
       multi_json (~> 1.3)
+    gherkin (2.12.2-x86-mingw32)
+      multi_json (~> 1.3)
     haml (4.0.6)
       tilt
     highline (1.6.21)
@@ -31,19 +33,35 @@ GEM
     multi_test (0.1.1)
     nokogiri (1.6.4.1)
       mini_portile (~> 0.6.0)
+    nokogiri (1.6.4.1-x86-mingw32)
+      mini_portile (~> 0.6.0)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry (0.10.1-x86-mingw32)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+      win32console (~> 1.3)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rspec (3.1.0)
+      rspec-core (~> 3.1.0)
+      rspec-expectations (~> 3.1.0)
+      rspec-mocks (~> 3.1.0)
+    rspec-core (3.1.7)
+      rspec-support (~> 3.1.0)
     rspec-expectations (3.1.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.1.0)
+    rspec-mocks (3.1.3)
+      rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
+    sass (3.4.23)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -54,11 +72,13 @@ GEM
       extlib (>= 0.9.5)
       highline (>= 1.4.0)
     tilt (1.4.1)
+    win32console (1.3.2-x86-mingw32)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   capybara
@@ -66,5 +86,10 @@ DEPENDENCIES
   cucumber-sinatra
   haml
   pry
+  rspec
   rspec-expectations
+  sass
   sinatra
+
+BUNDLED WITH
+   1.13.7
