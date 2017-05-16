@@ -5,6 +5,18 @@ Feature: Login Page
 
   Scenario: Authenticated User
     Given the login page
-    When I log in with proper credentials
+    When I enter proper credentials
+    And I log in
     Then I should see the secret page
-    
+
+  Scenario: Bad Guy Attempt
+    Given the login page
+    When I enter improper credentials
+    And I log in
+    Then I should see another login page
+
+  Scenario: Error Messaging
+    Given the login page
+    When I enter improper credentials
+    And I log in
+    Then I should see an error message
