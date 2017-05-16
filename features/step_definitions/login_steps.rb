@@ -1,14 +1,10 @@
 Given(/^the login page$/) do
-  #put your code here
-  pending
+  visit '/'
 end
 
-When(/^I log in with proper credentials$/) do
-  #put your code here
-  pending
-end
+When(/^I log in with (proper|incorrect) credentials$/) do |_situation|
+  fill_in 'username', with: 'test'
 
-Then(/^I should see the secret page$/) do
-  #put your code here
-  pending
+  fill_in 'password', with: _situation == 'proper' ? 'test' : 'bad'
+  click_button 'Login'
 end

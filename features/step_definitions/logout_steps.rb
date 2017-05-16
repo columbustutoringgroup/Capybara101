@@ -1,1 +1,3 @@
-#Add your codez here
+When(/^I logout$/) do
+  click_link 'Logout'
+end
