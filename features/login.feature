@@ -7,4 +7,6 @@ Feature: Login Page
     Given the login page
     When I log in with proper credentials
     Then I should see the secret page
+    And I should see the content "This is the secret page."
+    And I should see the content "Your username is cchoi."
     
