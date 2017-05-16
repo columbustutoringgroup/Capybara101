@@ -31,7 +31,12 @@ class Capybara101 < Sinatra::Base
   end
 
   get "/dashboard" do
-    @username = session[:user]
-    haml :dashboard
+    if logged_in?
+      @username = session[:user]
+      haml :dashboard
+    else
+      @message = 'Please sign in to view this page'
+      haml :index
+    end
   end
 end
