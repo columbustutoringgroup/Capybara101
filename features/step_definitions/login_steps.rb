@@ -1,14 +1,11 @@
 Given(/^the login page$/) do
-  #put your code here
-  pending
+  visit 'http://localhost:4567'
 end
 
 When(/^I log in with proper credentials$/) do
-  #put your code here
-  pending
+  login
 end
 
 Then(/^I should see the secret page$/) do
-  #put your code here
-  pending
+  page.should have_content('This is the secret page.')
 end
