@@ -5,6 +5,10 @@ Feature: Login Page
 
   Scenario: Authenticated User
     Given the login page
-    When I log in with proper credentials
+    When I log in with user 'gwadej' and password 'gwadej'
     Then I should see the secret page
-    
+
+  Scenario: Unauthenticated User
+    Given the login page
+    When I log in with user 'gwadej' and password 'foo'
+    Then I should see the authentication error message
