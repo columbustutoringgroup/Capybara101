@@ -1,14 +1,14 @@
 Given(/^the login page$/) do
-  #put your code here
-  pending
+  visit '/'
 end
 
 When(/^I log in with proper credentials$/) do
-  #put your code here
-  pending
+  fill_in 'username', :with => 'foobar'
+  fill_in 'password', :with => 'foobar'
+  click_button 'Login'
 end
 
 Then(/^I should see the secret page$/) do
-  #put your code here
-  pending
+  # How do I do this without hard-coding the path?
+  expect(current_path).to eq '/dashboard'
 end
