@@ -1,14 +1,13 @@
 Given(/^the login page$/) do
-  #put your code here
-  pending
+  visit('/')
 end
 
 When(/^I log in with proper credentials$/) do
-  #put your code here
-  pending
+  fill_in('username', :with => "Kaleb")
+  fill_in('password', :with => "Kaleb")
+  click_button('Login')
 end
 
 Then(/^I should see the secret page$/) do
-  #put your code here
-  pending
+  expect(current_path).to eq('/dashboard')
 end
