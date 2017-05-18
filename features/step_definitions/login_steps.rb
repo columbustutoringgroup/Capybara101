@@ -10,5 +10,4 @@ end
 
 Then(/^I should see the secret page$/) do
   expect(current_path).to eq '/dashboard'
-  
 end
