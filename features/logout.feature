@@ -4,7 +4,8 @@ Feature: Logout
   I want to be able to logout
 
   Scenario: Authenticated User - Secret Page
-    Given I am authenticated
-    When I see the secret page
-    And I press logout
-    Then I should see the logout page
+    Given the login page
+    And I log in with the username 'Test' and the password 'Test'
+    When I press logout
+    Then I should be in '/logout'
+    And I should see 'You have been logged out'
