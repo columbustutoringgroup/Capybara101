@@ -11,11 +11,18 @@ class Capybara101 < Sinatra::Base
   end
 
   get "/" do
-    haml :index
+    if session[:user]
+      redirect '/dashboard'
+    else
+      haml :index
+    end
   end
-
+  
   post '/login' do
-    if params[:username] == params[:password]
+    if params[:username].length == 0 || params[:password] == 0
+      @message = 'Neither the username nor the password may be empty'
+      haml :index
+    elsif params[:username] == params[:password]
       session[:user] = params[:username]
       redirect to '/dashboard'
     else
@@ -30,8 +37,12 @@ class Capybara101 < Sinatra::Base
     haml :index
   end
 
-  get "/dashboard" do
-    @username = session[:user]
-    haml :dashboard
+  get '/dashboard' do
+    if session[:user]
+      @username = session[:user]
+      haml :dashboard
+    else
+      redirect '/'
+    end
   end
 end
