@@ -1,14 +1,16 @@
 Given(/^the login page$/) do
-  #put your code here
+  visit '/'
   pending
 end
 
 When(/^I log in with proper credentials$/) do
-  #put your code here
+  fill_in 'username', with: 'credentials'
+  fill_in 'password' with: 'credentials'
+  click_button('Login')
   pending
 end
 
 Then(/^I should see the secret page$/) do
-  #put your code here
+  expect(page.current_path).to eq('/dashboard')
   pending
 end
