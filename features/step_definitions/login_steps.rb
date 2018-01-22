@@ -1,14 +1,13 @@
 Given(/^the login page$/) do
-  #put your code here
-  pending
+  visit 'http://localhost:4567/'
 end
 
-When(/^I log in with proper credentials$/) do
-  #put your code here
-  pending
+When(/^I login with username and password (.*?)$/) do |credentials|
+  fill_in 'username', :with => credentials
+  fill_in 'password', :with => credentials
+  click_button 'Login'
 end
 
-Then(/^I should see the secret page$/) do
-  #put your code here
-  pending
+Then(/^I should see the secret page with username (.*?) shown$/) do |credentials|
+  page.should have_content(credentials)
 end
