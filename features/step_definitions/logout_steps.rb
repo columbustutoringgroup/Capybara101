@@ -1,8 +1,6 @@
 Given(/^A logged-in user$/) do
-  visit '/'
-  fill_in 'username', with: 'admin'
-  fill_in 'password', with: 'admin'
-  click_button 'Login'
+  step("the login page")
+  step("I log in with proper credentials")
 end
 
 When(/^I select the logout option$/) do
