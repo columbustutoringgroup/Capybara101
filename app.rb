@@ -39,6 +39,8 @@ class Capybara101 < Sinatra::Base
       haml :dashboard
     else
       @message = 'Unauthorized access!'
+      #redirect to home page
+      haml :index
     end
 
   end
