@@ -9,5 +9,5 @@ When(/^I log in with proper credentials$/) do
 end
 
 Then(/^I should see the secret page$/) do
-  expect(page).to have_content "secret page"
+  expect(page).to have_content "This is the secret page."
 end
