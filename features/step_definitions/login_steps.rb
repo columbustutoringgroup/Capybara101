@@ -1,14 +1,16 @@
 Given(/^the login page$/) do
-  #put your code here
-  pending
+    visit '/'
+    expect(page.body).to include("Capybara Secret Site")
 end
 
 When(/^I log in with proper credentials$/) do
-  #put your code here
-  pending
+  within("#session") do
+    fill_in 'username', with: 'example'
+    fill_in 'password', with: 'example'
+  end
+  click_button 'Login'
 end
 
 Then(/^I should see the secret page$/) do
-  #put your code here
-  pending
+  expect(page.body).to include("This is the secret page.")
 end
