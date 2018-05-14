@@ -1,8 +1,6 @@
 Given(/^the dashboard page$/) do
   visit ('/')
-  fill_in 'username', with: "JohnDoe"
-  fill_in 'password', with: "JohnDoe"
-  click_button 'Login'
+  step 'I log in with proper credentials'
   expect(page).to have_content("This is the secret page")
 end
 
