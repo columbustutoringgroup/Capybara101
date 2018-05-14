@@ -1,14 +1,17 @@
+before :each do
+    User.make(username: 'password', password: 'password')
+  end
+
 Given(/^the login page$/) do
-  #put your code here
-  pending
+  visit '/index'
 end
 
 When(/^I log in with proper credentials$/) do
-  #put your code here
-  pending
+  within("#session") do
+    expect(user.username).to eq(user.password)
+  end
 end
 
 Then(/^I should see the secret page$/) do
-  #put your code here
-  pending
+  visit '/dashboard'
 end
