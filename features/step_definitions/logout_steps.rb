@@ -1,19 +1,14 @@
-before :each do
-    User.make(username: 'password', password: 'password')
-  end
-
-When(/^I click on the "(.*?)" button$/) do |arg1|
-  within("#session") do
-    click_link('/logout')
-  end
+Given(/^I log in with correct credentials$/) do
+  visit '/'
+  fill_in('username', with: 'testing')
+  fill_in('password', with: 'testing')
+  click_button('Login')
 end
 
-Then(/^I am logged out of my account$/) do
-  within("#session") do
-    session.clear
-  end
+When(/^I click on the "(.*?)" button$/) do |arg1|
+  click_link('Logout')
 end
 
 Then(/^I should see the logout page$/) do
-  visit '/logout'
+  expect(page).to have_content("You have been logged out")
 end
