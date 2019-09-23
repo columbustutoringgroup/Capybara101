@@ -31,7 +31,17 @@ class Capybara101 < Sinatra::Base
   end
 
   get "/dashboard" do
-    @username = session[:user]
-    haml :dashboard
+    #@username = session[:user]
+    #haml :dashboard
+    #first check if user is authenticated or not
+    if logged_in?
+      @username = session[:user]
+      haml :dashboard
+    else
+      @message = 'Unauthorized access!'
+      #redirect to home page
+      haml :index
+    end
+
   end
 end
