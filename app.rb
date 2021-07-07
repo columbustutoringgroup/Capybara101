@@ -15,7 +15,7 @@ class Capybara101 < Sinatra::Base
   end
 
   post '/login' do
-    if params[:username] == params[:password]
+    if params[:username].length > 0 and params[:username] == params[:password]
       session[:user] = params[:username]
       redirect to '/dashboard'
     else
@@ -31,7 +31,12 @@ class Capybara101 < Sinatra::Base
   end
 
   get "/dashboard" do
-    @username = session[:user]
-    haml :dashboard
+    if logged_in?
+      @username = session[:user]
+      haml :dashboard
+    else
+      @message = "You are not logged in"
+      haml :index
+    end
   end
 end
